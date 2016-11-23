@@ -3,4 +3,6 @@ import { Component } from '@angular/core';
   selector: 'app',
   templateUrl: './app/template.html'
 })
-export class AppComponent { }
+export class AppComponent {
+  title:String ="Angular 2";  
+}
