@@ -5,8 +5,8 @@ import { HeroService } from './hero.service';
 //const HEROES: Hero[];
 @Component({
   selector: 'heroes',
-  templateUrl: './app/template.html',
-  styleUrls: ["./app/styleTemplate.css"]
+  templateUrl: './app/heroes.component.html',
+  styleUrls: ["./app/heroes.component.css"]
 })
 
 
@@ -24,7 +24,9 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
   getHeroes(): void {
-    this.heroService.getHeroesSlowly().then(heroes =>this.heroes = heroes );
+    this.heroService.getHeroesSlowly()
+    .then(heroes =>this.heroes = heroes )
+    .catch((error) =>{console.log(error);this.heroes = [] })
   }
 
 }
